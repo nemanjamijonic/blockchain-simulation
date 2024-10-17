@@ -1,0 +1,14 @@
+@startuml activity2
+
+actor Client
+actor SmartContract
+actor Miner
+
+Client -> SmartContract : Send Data
+SmartContract -> Miner : Send Data for solving
+Miner -> SmartContract : Send Solution
+SmartContract -> Miner : Send Solution for verification
+Miner -> Miner : Add Block to Blockchain
+SmartContract -> Miner : Increase Bitcoin balance
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml component
+
+
+class Client {
+  - string ID;
+  - string Data;
+}
+
+class SmartContract {
+  - List<Miner> miners;
+  - List<Client> clients;
+  + RegisterMiner() 
+  + RegisterClient()
+  + RecieveData()
+}
+
+class Miners {
+ - string ID;
+ - string Balance;
+ - BlockChain chain;
+ + Solve()
+ + Validate()
+}
+
+class BlockChain{
+    - List<Block> chain;
+    + AddBlock()
+}
+
+class Block{
+    - string ID;
+    - string PreviousBlockID;
+    - string Data;
+    + GenerateHesh()
+}
+Client -right-> SmartContract
+SmartContract -right-> Miners
+
+Block .up.> BlockChain
+BlockChain .left.> Miners 
+@enduml

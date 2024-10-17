@@ -1,0 +1,14 @@
+@startuml activity1
+
+start
+:Client sends data;
+:SmartContract receives data;
+:SmartContract sends data to Miners;
+:Miners solve mathematical problem;
+:Miners send solution to SmartContract;
+:SmartContract send solution on verification to Miners;
+:Miners confirm and add block to blockchain;
+:Miner that solve problem increase Bitcoin balance;
+stop
+
+@enduml
